@@ -1,10 +1,16 @@
 .jumbotron {
     background-image: url("../img/pizaa.png");
     background-size: cover;
-    height:600px;
+    height:800px;
 }
-.img1 {
+#img1 {
     float: left;
+    margin-top: 0px;
+    width: 150px;
+    height: 150px;
+}
+#img2 {
+    float: right;
     margin-top: 0px;
     width: 150px;
     height: 150px;
