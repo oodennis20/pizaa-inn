@@ -73,11 +73,17 @@ p {
     color:#008000dc;
 }
 .input-1{
-    margin-left: 583px;
+    margin-left: 553px;
 }
 .row{
-    margin-left: 483px;
+    margin-left: 433px;
 }
 #email {
+    margin-left: 48px;
+}
+#estate {
+    margin-left: 48px;
+}
+#door-no {
     margin-left: 48px;
 }
