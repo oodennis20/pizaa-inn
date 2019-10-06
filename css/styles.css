@@ -2,6 +2,7 @@
     background-image: url("../img/pizaa.png");
     background-size: cover;
     height:800px;
+    background color: #f01414;
 }
 #img1 {
     float: left;
@@ -20,4 +21,10 @@
     top: -50px; 
     width: 93%; 
     transition: top 0.3s; 
+}
+.bg1 {
+    background-color:#f01414;
+}
+p {
+    color: white;
 }
