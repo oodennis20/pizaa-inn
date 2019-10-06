@@ -15,3 +15,9 @@
     width: 150px;
     height: 150px;
 }
+#navbar {
+    position: fixed; 
+    top: -50px; 
+    width: 93%; 
+    transition: top 0.3s; 
+}
