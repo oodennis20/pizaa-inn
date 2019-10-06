@@ -87,3 +87,24 @@ p {
 #door-no {
     margin-left: 48px;
 }
+.B {
+    margin-left: 433px;
+}
+#anotherorder {
+    margin-left: 88px;
+    background-color:#ff0000c9;
+    color:white;
+    font-family: Pacifico;
+}
+#delivery {
+    margin-left: 82px;
+    background-color:#ff0000c9;
+    color:white;
+    font-family: Pacifico;
+}
+#SBMT {
+    background-color:#ff0000c9;
+    color:white;
+    font-family: Pacifico;
+}
+
