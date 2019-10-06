@@ -1,8 +1,6 @@
-.jumbotron {
-    background-image: url("../img/pizaa.png");
+.jumbotron {;
     background-size: cover;
-    height:800px;
-    background color: #f01414;
+    background-color: #020202e0;
 }
 #img1 {
     float: left;
@@ -17,14 +15,28 @@
     height: 150px;
 }
 #navbar {
-    position: fixed; 
+    position: fixed;
     top: -50px; 
     width: 93%; 
     transition: top 0.3s; 
 }
-.bg1 {
-    background-color:#f01414;
-}
 p {
     color: white;
+    margin-left:70%;
+    top:
+}
+.img3 {
+    position: absolute;
+    margin-top: -600px;
+    margin-left: 135px;
+}
+.img4 {
+    margin-top: -200px;
+} 
+.img5 {
+    margin-left: 925px;
+    margin-top: -550px;
+} 
+.image1 {
+    margin-top: 300px
 }
