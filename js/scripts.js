@@ -8,10 +8,20 @@ function scrollFunction() {
   }
 }
 
+class order {
+  constructor(name, email, size, crust, toppings) {
+    this.Name = name;
+    this.Email = email;
+    this.Size = size;
+    this.Crust = crust;
+    this.Toppings = toppings;
+  }
+}
+
 $("form#order").submit(function(event) {
   event.preventDefault();
 
-  // the data from the form
+
   var name = $("input#name").val();
   var email = $("input#email").val();
 
@@ -26,24 +36,26 @@ $("form#order").submit(function(event) {
   var door = $("input#door-no").val();
   var estate = $("input#estate").val();
 
-  function order(name,email,size,crust,toppings){
-    this.Name = name;
-    this.Email = email;
-    this.Size = size;
-    this.Crust = crust;
-    this.Toppings = toppings;
-  }
+ 
 
   var neworder = new order(name,email,size,toppings,crust);
   console.log(neworder)
 
-  resetFields();
+  resetFields()
+  function resetFields(){
+    $("input#name").val("");
+    $("input#email").val("");
+    $("input[name='toppings']").prop('checked',false);
+    $("select#IG2").val("");
+    $("select#IG1").val("");
+  };
 
 });
-function resetFields(){
-  $("input#name").val("");
-  $("input#email").val("");
-  $("input[name='toppings']").prop('checked',false);
-  $("select#IG2").val("");
-  $("select#IG1").val("");
-};
+
+
+calculation(neworder);
+
+function calculation(neworder){
+  var sizeprice=parseInt(neworder.Size.split(", ")[1]);
+  console.log(sizeprice);
+}
