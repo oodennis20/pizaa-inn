@@ -16,14 +16,13 @@
 }
 #navbar {
     position: fixed;
-    top: -50px; 
+    top: -10px; 
     width: 93%; 
-    transition: top 0.3s; 
+    transition: bottom 0.3s; 
 }
 p {
     color: white;
     margin-left:70%;
-    top:
 }
 .img3 {
     position: absolute;
@@ -84,7 +83,7 @@ p {
 #estate {
     margin-left: 48px;
 }
-#door-no {
+#door {
     margin-left: 48px;
 }
 .B {
@@ -97,7 +96,7 @@ p {
     font-family: Pacifico;
 }
 #delivery {
-    margin-left: 82px;
+    margin-left: 224px;
     background-color:#ff0000c9;
     color:white;
     font-family: Pacifico;
@@ -107,14 +106,32 @@ p {
     color:white;
     font-family: Pacifico;
 }
+#RESET {
+    background-color:#ff0000c9;
+    color:white;
+    font-family: Pacifico;
+}
 .input-2 {
     margin-left: 352px;
     color:#008000dc;
 }
 .pg3 {
-    margin-left:150px;
+    margin-left:240px;
     font-family: Pacifico;
     font-size:25px;
     color:#ff0000c9;
 }
+.addr {
+    display: none;
+}
+.addrss{
+    display:none;
+}
+.last{
+    display:none;
+}
+.grand {
+    background-color: #dde3da;
+}
+
 
