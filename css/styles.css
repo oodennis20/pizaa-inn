@@ -72,7 +72,7 @@ p {
     color:#008000dc;
 }
 .input-1{
-    margin-left: 553px;
+    margin-left: 453px;
 }
 .row{
     margin-left: 433px;
@@ -96,27 +96,27 @@ p {
     font-family: Pacifico;
 }
 #delivery {
-    margin-left: 224px;
+    margin-left: 860px;
     background-color:#ff0000c9;
     color:white;
     font-family: Pacifico;
+    border: none;
 }
 #SBMT {
+    margin-top: -26px;
+    margin-left: 892px;
     background-color:#ff0000c9;
     color:white;
     font-family: Pacifico;
+    border: none;
 }
-#RESET {
-    background-color:#ff0000c9;
-    color:white;
-    font-family: Pacifico;
-}
+
 .input-2 {
-    margin-left: 352px;
+    margin-left: 252px;
     color:#008000dc;
 }
 .pg3 {
-    margin-left:240px;
+    margin-left:260px;
     font-family: Pacifico;
     font-size:25px;
     color:#ff0000c9;
@@ -126,12 +126,37 @@ p {
 }
 .addrss{
     display:none;
-}
+} 
 .last{
-    display:none;
-}
+    display:none; 
+ }
 .grand {
+    position: absolute;
+    width: 50%;
+    min-height: 60%; 
+    top: 197%;
+    left: 26%;
     background-color: #dde3da;
+}
+.cntct{
+    justify-content: space-around; 
+}
+.totals {
+    text-align: center;
+}
+.close {
+    color: #ff0000c9;
+}
+.dismss {
+    background-color:#ff0000c9;
+    border: none;
+    color:white;
+}
+.pgr {
+    color:black;
+}
+.s1 {
+    color:#ff0000c9;
 }
 
 

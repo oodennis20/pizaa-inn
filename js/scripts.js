@@ -14,7 +14,7 @@ function Order(name,email,size,crust,toppings){
   this.Email = email;
   this.Size = size;
   this.Crust = crust;
-  this.Toppings = [toppings];
+  this.Toppings = toppings;
   this.Addresses = [];
 
 };
@@ -33,15 +33,14 @@ $("#delivery").click(function(){
   $(".addrss").show();
 });
 
-
-// form submission event
+//this is the form submission event
 $("form#new-order").submit(function(event) {
   event.preventDefault();
 
-
-  // the data from the form
+  //this is the data from the form
   var name = $("input#name").val();
   var email = $("input#email").val();
+
   var crust = $("select#IG2").val();
   var size = $("select#IG1").val();
   var top = [];
@@ -49,20 +48,20 @@ $("form#new-order").submit(function(event) {
       top.push($(this).val());
   });
 
-  var area = $("input#areaname").val();
+  var area = $("input#area").val();
   var estate = $("input#estate").val();
-  var apartment = $("input#apartment-no").val();
-  var door = $("input#door-no").val();
+  var apartment = $("input#apartment").val();
+  var door = $("input#door").val();
 
 
-  // Structure of th constructor ***Order(name,phone,size,crust,toppings )***
-  // creating the object for the order made by the user
+  // this is the constructor for Order(name,phone,size,crust,toppings)
+
   var newOrder = new Order(name,email,size,crust,top);
   console.log(newOrder);
 
 
-  // structure for the constructor ***Address(street,estate,apartment,floor)***
-  // creating the object for the address given for delivery
+  // this is the constructor for Address(street,estate,apartment,floor)
+
   var newAddress = new Address(area,estate,apartment,door);
   console.log(newAddress);
   newOrder.Addresses.push(newAddress);
@@ -72,19 +71,22 @@ $("form#new-order").submit(function(event) {
 
   displayData(newOrder);
 
-  // putting the orders into an array
+  // this is the array for the orders
+
   var totalOrders = [];
   totalOrders.push(newOrder);
   console.log(totalOrders);
 
 
-  // this is for emptying the fields after clicking submit
- 
+  //  clicking submit will empty the fields
+
   resetFields();
 
 });
 
-// CALCULATION FUNCTION
+
+// CALC function
+
 function billCalculation(newOrder){
   var sizePrice = parseInt(newOrder.Size.split(", ")[1]);
   console.log(sizePrice);
@@ -110,7 +112,7 @@ function billCalculation(newOrder){
       console.log(delivery);
       var deliveryPrice;
 
-      if(delivery[0].Estate==null || delivery[0].Estate=="" && delivery[0].Area==null || delivery[0].Area=="" && delivery[0].Apartment==null || delivery[0].Apartment=="" && delivery[0].Door==null || delivery[0].Door==""){
+      if(delivery[0].Estate==null || delivery[0].Estate=="" && delivery[0].Street==null || delivery[0].Street=="" && delivery[0].Apartmant==null || delivery[0].Apartmant=="" && delivery[0].Floor==null || delivery[0].Floor==""){
           deliveryPrice = 0;
           return deliveryPrice;
       }else{
@@ -125,44 +127,50 @@ function billCalculation(newOrder){
   var price = sizePrice + crustPrice + toppingPrice + deliveryTag;
   console.log(price);
 
-  // total
+  // this is the total after the CALC function
+
   $("#total").text(price);
 
 }
 
 
 
-// Structure of th constructor ***Order(name,phone,size,crust,toppings )***
-// function for displaying  data
+//this is the function for displaying  data
+
 function displayData(newOrder){
   var name = newOrder.Name;
   var email = newOrder.Email;
 
-  var size = newOrder.Size.split(", ")[0];
-  var sizePrice = newOrder.Size.split(", ")[1];
+  var sze = newOrder.Size.split(", ")[0];
+  var szePrc = newOrder.Size.split(", ")[1];
 
-  var crust = newOrder.Crust.split(", ")[0];
-  var crustPrice = newOrder.Crust.split(", ")[1];
+  var crst = newOrder.Crust.split(", ")[0];
+  var crstPrc = newOrder.Crust.split(", ")[1];
 
-  var toppings;
-  var toppingsPrice;
+  var toppngs;
+  var toppngsPrc;
 
   var tops = newOrder.Toppings;
   tops.forEach(function(topps) {
      
-      toppings = topps.split(", ")[0];
-      toppingsPrice = topps.split(", ")[1]; 
-      // displaying the list of arrays
-      $("ul#new-topping").append("<li><span class=''>" + toppings + " " + " -KSh." + toppingsPrice + "</span></li>");
+      toppngs = topps.split(", ")[0];
+      toppngsPrc = topps.split(", ")[1]; 
+
+      // this is the list of arrays
+
+      $("ul#new-topping").append("<li><span class=''>" + toppngs + " " + " @KSh." + toppngsPrc + "</span></li>");
   });
 
-  // print outs
+  // a display for the (name,email,size,crust)
+
   $("#new-name").text(name);
   $("#new-email").text(email);
-  $("#new-size").text(size + " -KSh." + sizePrice);
-  $("#new-crust").text(crust + " -KSh." + crustPrice);
+  $("#new-size").text(sze + " @KSh." + szePrc);
+  $("#new-crust").text(crst + " @KSh." + crstPrc);
 
-  // printing the address
+  //ths is for printing the address
+
+
   var ad = newOrder.Addresses;
   $("#new-estate").text(ad[0].Estate);
   $("#new-area").text(ad[0].Area);
@@ -171,14 +179,15 @@ function displayData(newOrder){
 
 }
 
-
 // for emptying the fields
-
-
 function resetFields(){
   $("input#name").val("");
   $("input#email").val("");
   $("input[name='topping']").prop('checked',false);
   $("select#IG2").val("");
   $("select#IG1").val("");
+  $("input#area").val("");
+  $("input#estate").val("");
+  $("input#apartment").val("");
+  $("input#door").val("");
 };
